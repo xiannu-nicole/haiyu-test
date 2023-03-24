@@ -54,21 +54,34 @@ nav ul li a {
 nav ul li a:hover {
   color: #fff;
 }
-nav ul li#search img, nav ul li#news img, nav ul li#memberPic img {
+nav ul li.search img, nav ul li.news img, nav ul li.memberPic img {
   width: 18px;
   height: 18px;
   object-fit: contain;
 }
-nav ul li#search img:hover, nav ul li#news img:hover {
+nav ul li.search img:hover, nav ul li.news img:hover {
   filter: invert(0) sepia(200) saturate(520) hue-rotate(137deg);
 }
-nav ul li#news img:hover {
+nav ul li.news img:hover {
   transform: scale(0.9);
+}
+nav ul li#bar {
+  margin-left: 50px;
 }
 nav ul li#bar a {
   width: 40px;
   line-height: 16.8px;
   position: relative;
+}
+nav ul li#bar a:before {
+  content: "";
+  position: absolute;
+  left: -25px;
+  top: -20px;
+  bottom: -20px;
+  width: 1px;
+  transform: rotate(20deg);
+  background-color: rgba(255, 255, 255, 0.1725490196);
 }
 nav ul li#bar a:after {
   content: "．．．";
@@ -111,6 +124,9 @@ nav ul.member #login {
 }
 nav ul.member #login.show {
   display: block;
+}
+nav ul.mobile-menu {
+  display: none;
 }
 
 #banner {
@@ -211,8 +227,30 @@ nav ul.member #login.show {
 }
 
 @media (max-width: 991px) {
+  nav {
+    padding: 10px;
+  }
+  nav img.logo {
+    width: 135px;
+  }
   nav ul.main-menu, nav ul.member {
     display: none;
+  }
+  nav ul.mobile-menu {
+    display: block;
+  }
+  nav ul.mobile-menu li a {
+    margin: 0 8px;
+  }
+  nav ul.mobile-menu li.age-limit a {
+    border: 1px solid #fff;
+    border-radius: 50vh;
+    padding: 4px;
+  }
+  nav ul.mobile-menu li.news a {
+    border: 1px solid #fff;
+    border-radius: 50vh;
+    padding: 4px;
   }
   #banner .about {
     margin-top: -50px;

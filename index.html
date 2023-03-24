@@ -5,6 +5,8 @@
 <!-- scss、bootstrap、vue2 -->
 <!-- 1.設計稿沒有平板畫面，但我一併調整了一下 -->
 <!-- 2.banner大圖光影特效看不出是如何製成的，不曉得是不是影片？ -->
+<!-- 3.登入後的會員大頭貼我下載不了，所以先找了其他假圖 -->
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,7 +25,8 @@
     <header>
         <nav class="d-flex align-items-center justify-content-between">
             <div class="d-flex align-items-center">
-                <h1 class="mb-0 d-flex align-items-center"><img class="logo" src="./public/image/logo.png" alt="CAYPTO PLAT｜logo">
+                <h1 class="mb-0 d-flex align-items-center"><img class="logo" src="./public/image/logo.png"
+                        alt="CAYPTO PLAT｜logo">
                 </h1>
                 <ul class="main-menu">
                     <div class="d-flex ms-4">
@@ -39,18 +42,25 @@
             <ul class="member">
                 <div class="d-flex">
                     <li><a href="javascript:;">English</a></li>
-                    <li id="search" ><a href="javascript:;"><img src="./public/image/search.png" alt="search"></a></li>
+                    <li class="search"><a href="javascript:;"><img src="./public/image/search.png" alt="search"></a></li>
                     <li id="to-login" :class="login === true ? 'hide' : ''">
                         <a href="javascript:;" @click="login = true">登入｜註冊</a>
                     </li>
                     <div id="login" :class="login === true ? 'show' : ''">
                         <div class="d-flex">
-                        <li id="memberPic"><a href="javascript:;"><img src="https://cdn-icons-png.flaticon.com/512/9071/9071193.png" alt=""></a></li>
-                        <li id="news"><a href="javascript:;"><img src="./public/image/news.png" alt=""></a></li>
-                    </div>
+                            <li class="memberPic"><a href="javascript:;"><img
+                                        src="https://cdn-icons-png.flaticon.com/512/9071/9071193.png" alt=""></a></li>
+                            <li class="news"><a href="javascript:;"><img src="./public/image/news.png" alt=""></a></li>
+                        </div>
                     </div>
                     <li id="bar"><a href="javascript:;"></a></li>
                 </div>
+            </ul>
+            <ul class="mobile-menu">
+                <div class="d-flex align-items-center">
+                <li class="age-limit"><a href="javascript:;">成人向</a></li>
+                <li class="news" ><a href="javascript:;"><img src="./public/image/news.png" alt=""></a></li>
+            </div>
             </ul>
         </nav>
     </header>
@@ -101,9 +111,9 @@
 
     <script>
         new Vue({
-            el:"nav",
+            el: "nav",
             data: {
-                login:'',
+                login: '',
             },
         })
     </script>
