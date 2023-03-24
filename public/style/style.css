@@ -9,14 +9,12 @@ body {
   color: #fff;
   letter-spacing: 0.8px;
   line-height: 120%;
-  z-index: 1;
 }
 
 .container {
   width: 95%;
   margin: 0 auto;
   max-width: 1440px;
-  line-height: 120%;
 }
 
 a {
