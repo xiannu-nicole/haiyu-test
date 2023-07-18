@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- 使用工具 -->
-<!-- scss、bootstrap、vue2 -->
-<!-- 1.設計稿沒有平板畫面，但我一併調整了一下 -->
-<!-- 2.banner大圖光影特效看不出是如何製成的，不曉得是不是影片？ -->
-<!-- 3.登入後的會員大頭貼我下載不了，所以先找了其他假圖 -->
 
 <head>
     <meta charset="UTF-8">
@@ -22,83 +17,10 @@
 </head>
 
 <body>
-    <header>
-        <nav class="d-flex align-items-center justify-content-between">
-            <div class="d-flex align-items-center">
-                <h1 class="mb-0 d-flex align-items-center"><img class="logo" src="./public/image/logo.png"
-                        alt="CAYPTO PLAT｜logo">
-                </h1>
-                <ul class="main-menu">
-                    <div class="d-flex ms-4">
-                        <li><a href="javascript:;">最新上架</a></li>
-                        <li><a href="javascript:;">人氣排行</a></li>
-                        <li><a href="javascript:;">熱門活動</a></li>
-                        <li><a href="javascript:;">重要公告</a></li>
-                        <li><a href="javascript:;">網頁儲值</a></li>
-                        <li><a href="javascript:;">我的遊戲</a></li>
-                    </div>
-                </ul>
-            </div>
-            <ul class="member">
-                <div class="d-flex">
-                    <li><a href="javascript:;">English</a></li>
-                    <li class="search"><a href="javascript:;"><img src="./public/image/search.png" alt="search"></a></li>
-                    <li id="to-login" :class="login === true ? 'hide' : ''">
-                        <a href="javascript:;" @click="login = true">登入｜註冊</a>
-                    </li>
-                    <div id="login" :class="login === true ? 'show' : ''">
-                        <div class="d-flex">
-                            <li class="memberPic"><a href="javascript:;"><img
-                                        src="https://cdn-icons-png.flaticon.com/512/9071/9071193.png" alt=""></a></li>
-                            <li class="news"><a href="javascript:;"><img src="./public/image/news.png" alt=""></a></li>
-                        </div>
-                    </div>
-                    <li id="bar"><a href="javascript:;"></a></li>
-                </div>
-            </ul>
-            <ul class="mobile-menu">
-                <div class="d-flex align-items-center">
-                <li class="age-limit"><a href="javascript:;">成人向</a></li>
-                <li class="news" ><a href="javascript:;"><img src="./public/image/news.png" alt=""></a></li>
-            </div>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <!-- banner -->
-        <section id="banner">
-            <img src="./public/image/banner-01.png" alt="banner">
-            <!-- about -->
-            <div class="about">
-                <div class="container">
-                    <div class="content">
-                        <div class="name d-flex align-items-center">
-                            <div class="img-box me-3 me-md-5">
-                                <img src="./public//image/game-01.png" alt="">
-                            </div>
-                            <div class="d-flex flex-column align-items-start">
-                                <h2>勝利女神妮姬<small>GODDESS OF VICTORY: NIKKE</small></h2>
-                                <div class="tag">
-                                    <h6>網頁遊戲</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="introduction">
-                            第3人稱射擊手遊。集中了《天命之子》所有Live2D ver 3.3和2.5D PAPER
-                            FOLDING技術來實現生動的戰鬥動作。故事背景講述在被外星人淘汰的地球，代替人類上戰場的戰鬥少女的故事。
-                        </p>
-                        <div class="d-flex align-items-center justify-content-center" style="flex: 1;">
-                            <a href="javascript:;" class="start-btn text-center">開始遊戲</a>
-                            <a href="javascript:;" class="mobile-btn text-center">僅可在 PC 上遊玩</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-    </main>
-
+    <div>
+        <input type="text" id="1" v-model="text">
+        <input type="text" id="2" v-model="text2" @keydown="delect">
+    </div>
     <!-- vue -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.14/vue.min.js"
         integrity="sha512-BAMfk70VjqBkBIyo9UTRLl3TBJ3M0c6uyy2VMUrq370bWs7kchLNN9j1WiJQus9JAJVqcriIUX859JOm12LWtw=="
@@ -113,8 +35,19 @@
         new Vue({
             el: "nav",
             data: {
-                login: '',
+                text: '',
+                text2: '',
             },
+            methods:{
+                delect(){
+                    let _2 = document.querySelector("#2")
+                    _2.focus()
+                }
+            },
+            mounted(){
+                let _1 = document.querySelector("#1")
+                _1.focus()
+            }
         })
     </script>
 </body>
