@@ -13,13 +13,13 @@
         integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="./public/style/style.css">
+    <link id="nav" rel="stylesheet" href="./public/style/style.css">
 </head>
 
 <body>
-    <div style="padding:100px;">
+    <div  style="padding:100px;">
         <input inputmode="numeric" type="text" id="1">
-        <input inputmode="numeric" type="text" id="2" maxlength="1" @click="delect">
+        <input inputmode="numeric" type="text" id="2" maxlength="1" @keydown.delete="delect">
     </div>
     <!-- vue -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.14/vue.min.js"
@@ -33,7 +33,7 @@
 
     <script>
         new Vue({
-            el: "nav",
+            el: "#nav",
             data(){
                 return{
                 text: '',
@@ -44,11 +44,14 @@
                 delect(e){
                     console.log("按樂啦")
                     alert(e.key)
-                    if(e.key === "Backspace" || e.key === "Delete"){
-                                            let _1 = document.getElementById("2")
+                                                                let _1 = document.getElementById("2")
                     _1.focus()
                     alert(e.key)
-                    }
+                    // if(e.key === "Backspace" || e.key === "Delete"){
+                    //                         let _1 = document.getElementById("2")
+                    // _1.focus()
+                    // alert(e.key)
+                    // }
 
                 }
             },
