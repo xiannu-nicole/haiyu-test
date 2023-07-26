@@ -99,6 +99,10 @@
 
     <script>
         var mySwiper = new Swiper('.swiper', {
+            touchRatio: 1, //触摸变慢
+            lazy: {
+    loadPrevNext: true,
+  },
         })
         new Vue({
             el: "#nav",
