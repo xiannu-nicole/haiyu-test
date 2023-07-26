@@ -16,7 +16,7 @@
 
     <style>
         img{
-            width: 100%;
+            width: 50%;
             object-fit: cover;
             height: 60vh;
         }
@@ -101,6 +101,8 @@
     <script>
         var mySwiper = new Swiper('.swiper', {
             touchRatio: 1, //触摸变慢
+            	autoplay: true,//可选选项，自动滑动
+
         })
         new Vue({
             el: "#nav",
