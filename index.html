@@ -98,11 +98,25 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
-        var mySwiper = new Swiper('.swiper', {
-            touchRatio: 1, //触摸变慢
-            lazy: {
-    loadPrevNext: true,
-  },
+ var mySwiper = new Swiper(".mySwiper", {
+            cssMode: true,
+            autoplay: {
+              delay: 3000,
+            },
+            // loop: true,
+            slidesPerView: 1,
+            paginationClickable: true,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            // freeMode: true,
+            threshold: 100,
+            mousewheel: true,
+            preventInteractionOnTransition: true,
+            mousewheel: true,
+
+          });
         })
         new Vue({
             el: "#nav",
