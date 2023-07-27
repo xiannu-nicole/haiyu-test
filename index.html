@@ -12,22 +12,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"
         integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.css">
 
-    <style>
-        img {
-            width: 100%;
-            object-fit: cover;
-            height: 60vh;
-        }
-    </style>
+    <link rel="stylesheet" href="./public/style/style.css">
 </head>
 
 <body>
-
-    <div style="padding: 100px;">
-        <input type="text" name="" id="1" >
-        <input type="text" name="" id="2" @keyup="delect">
+    <div id="nav" style="padding:100px;">
+        <input inputmode="numeric" type="text" id="1">
+        <input inputmode="numeric" type="text" id="2" maxlength="1" @keydown="delect">
     </div>
     <!-- vue -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.14/vue.min.js"
@@ -37,39 +29,31 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"
         integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.4/swiper-bundle.min.js"
-        integrity="sha512-0N/5ZOjfsh3niel+5dRD40HQkFOWaxoVzqMVAHnmAO2DC3nY/TFB7OYTaPRAFJ571IRS/XRsXGb2XyiFLFeu1g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
-        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
     <script>
-        var mySwiper = new Swiper('.swiper', {
-            touchRatio: 1, //触摸变慢
-            lazy: {
-                loadPrevNext: true,
-            },
-        })
         new Vue({
             el: "#nav",
-            data() {
-                return {
-                    text: '',
-                    text2: '',
-                }
+            data(){
+                return{
+                text: '',
+                text2: '',
+            }
             },
-            computed() {
+            computed(){
                 this.delect()
             },
-            methods: {
-                delect(e) {
-                    if(e.key == "Backspace")
-                    alert("aaa")
+            methods:{
+                delect(e){
+                    if(e.key === "Backspace" || e.key === "Delete"){
+                    let _1 = document.getElementById("2")
+                    _1.focus()
+                    alert(e.key)
+                    }
 
                 }
             },
-            mounted() {
+            mounted(){
                 let _2 = document.getElementById("2")
                 _2.focus()
             }
