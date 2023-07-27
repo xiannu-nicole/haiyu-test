@@ -12,12 +12,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"
         integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.css" integrity="sha512-rVfXYRlhHtd3C4PzoBxSaKhI/uYEi0/5K69RwK/cdxQld57PC6mZ7tkutR+KD96WrXZ6E/96qYeY4CVun7a0/w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js" integrity="sha512-ZHauUc/vByS6JUz/Hl1o8s2kd4QJVLAbkz8clgjtbKUJT+AG1c735aMtVLJftKQYo+LD62QryvoNa+uqy+rCHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
-    
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.css">
+
     <style>
-        img{
+        img {
             width: 100%;
             object-fit: cover;
             height: 60vh;
@@ -26,64 +24,11 @@
 </head>
 
 <body>
-    <div class="swiper-container mySwiper">
-        <div class="swiper-wrapper">
-            <!-- Slide 1 -->
-            <div class="swiper-slide">
-                <div class="swiper-image">
-                    <div class="image">
-<img src="https://imgholder.ru/600x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="swiper-image">
-                    <div class="image">
-                        <img src="https://imgholder.ru/600x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" alt="">
 
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="swiper-image">
-                    <div class="image">
-                        <img src="https://imgholder.ru/600x300/8493a8/adb9ca&text=ddd+HOLDER&font=kelson" alt="">
-
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="swiper-image">
-                    <div class="image">
-                        <img src="https://imgholder.ru/600x300/8493a8/adb9ca&text=aaa+HOLDER&font=kelson" alt="">
-
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="swiper-image">
-                    <div class="image">
-                        <img src="https://imgholder.ru/600x300/8493a8/adb9ca&text=zzz+HOLDER&font=kelson" alt="">
-
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="swiper-image">
-                    <div class="image">
-                        <img src="https://imgholder.ru/600x300/8493a8/adb9ca&text=zxzxzx+HOLDER&font=kelson" alt="">
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
+    <div style="padding: 100px;">
+        <input type="text" name="" id="1" >
+        <input type="text" name="" id="2"@keyup.enter="delect">
     </div>
-    <div class="swiper-pagination"></div>
-    </div>
-
-
-
     <!-- vue -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.14/vue.min.js"
         integrity="sha512-BAMfk70VjqBkBIyo9UTRLl3TBJ3M0c6uyy2VMUrq370bWs7kchLNN9j1WiJQus9JAJVqcriIUX859JOm12LWtw=="
@@ -92,35 +37,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"
         integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.4/swiper-bundle.min.js"
+        integrity="sha512-0N/5ZOjfsh3niel+5dRD40HQkFOWaxoVzqMVAHnmAO2DC3nY/TFB7OYTaPRAFJ571IRS/XRsXGb2XyiFLFeu1g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
         integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
-          var swiper = new Swiper(".mySwiper", {
-            cssMode: true,
-
-            autoplay: {
-              delay: 3000,
+        var mySwiper = new Swiper('.swiper', {
+            touchRatio: 1, //触摸变慢
+            lazy: {
+                loadPrevNext: true,
             },
-            // loop: true,
-            slidesPerView: 1,
-            
-            paginationClickable: true,
-            pagination: {
-              el: ".swiper-pagination",
-              clickable: true,
-            },
-            // freeMode: true,
-            // touchRatio:0.5,
-            // threshold: 100,
-            
-            mousewheel: true,
-            preventInteractionOnTransition: true,
-            mousewheel: true,
-          });
-        swiper.setTranslate(swiper.getTranslate());
+        })
         new Vue({
             el: "#nav",
             data() {
@@ -134,10 +64,8 @@
             },
             methods: {
                 delect(e) {
-                    if (e.key === "Backspace" || e.key === "Delete") {
-                        let _1 = document.getElementById("1")
-                        _1.focus()
-                    }
+                    let _1 = document.getElementById("1")
+                    _1.focus()
 
                 }
             },
