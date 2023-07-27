@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>李孟臻</title>
 
@@ -99,14 +99,27 @@
 
     <script>
           var swiper = new Swiper(".mySwiper", {
-            oneWayMovement： true,
-              cssMode: true,
-              pagination: {
-      el: '.swiper-pagination',
-    },
-      },
-    
- 
+            cssMode: true,
+
+            autoplay: {
+              delay: 3000,
+            },
+            // loop: true,
+            slidesPerView: 1,
+            oneWayMovement：true,
+            paginationClickable: true,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            // freeMode: true,
+            // touchRatio:0.5,
+            // threshold: 100,
+            shortSWipes: false,
+            longSWipes: false,
+            mousewheel: true,
+            preventInteractionOnTransition: true,
+            mousewheel: true,
           });
         new Vue({
             el: "#nav",
