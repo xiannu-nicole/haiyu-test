@@ -100,9 +100,7 @@
     <script>
           var swiper = new Swiper(".mySwiper", {
             cssMode: true,
-            autoplay: {
-              delay: 3000,
-            },
+
             // loop: true,
             slidesPerView: 1,
             paginationClickable: true,
@@ -111,7 +109,7 @@
               clickable: true,
             },
             // freeMode: true,
-            threshold: 100,
+            touchRatio:0.5,
             mousewheel: true,
             preventInteractionOnTransition: true,
             mousewheel: true,
